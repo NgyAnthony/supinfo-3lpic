@@ -1,0 +1,6 @@
+---
+- hosts: masters
+  tasks:
+    - synchronize:
+        src: certs
+        dest: /etc/haproxy/certs

@@ -1,2 +1,3 @@
 ---
 - import_playbook: update-apt-get.yml
+- import_playbook: install-rsync.yml

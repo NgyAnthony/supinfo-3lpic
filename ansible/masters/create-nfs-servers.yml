@@ -1,0 +1,9 @@
+---
+- hosts: masters
+  roles:
+    - { role: geerlingguy.nfs }
+  vars:
+    nfs_network: "172.16.25.0/255.255.255.0"
+    nfs_exports:
+      - /data/nfs {{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}(rw,sync,no_root_squash)
+      - /data/nfs {{ nfs_network }}(rw,sync,no_root_squash)
