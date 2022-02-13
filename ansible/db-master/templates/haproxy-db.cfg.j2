@@ -13,7 +13,7 @@ defaults
     option allbackups
 
 listen mysql-cluster
-    bind 127.0.0.1:3307
+    bind *:3307
     mode tcp
     balance roundrobin
     option mysql-check

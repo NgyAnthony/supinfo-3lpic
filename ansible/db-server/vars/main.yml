@@ -9,4 +9,4 @@ mysql_users:
     password: supinfo-3lpic
     priv: "main_db.*:ALL"
 mysql_packages:
-  - mariadb-server
+  - default-mysql-server
