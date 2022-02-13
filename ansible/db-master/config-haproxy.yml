@@ -1,5 +1,5 @@
 ---
-- hosts: app-masters
+- hosts: db-masters
   tasks:
     - name: Configure the DB HAProxy server
       template:
