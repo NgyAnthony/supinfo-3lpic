@@ -1,0 +1,8 @@
+---
+- hosts: masters
+  tasks:
+    - name: Install HAProxy
+      package:
+        name: haproxy
+        state: present
+      register: x

@@ -1,0 +1,3 @@
+---
+- import_playbook: check-haproxy.yml
+- import_playbook: init-haproxy.yml

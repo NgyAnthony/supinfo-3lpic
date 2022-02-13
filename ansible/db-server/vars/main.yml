@@ -1,0 +1,12 @@
+mysql_root_password: supinfo-3lpic
+mysql_databases:
+  - name: main_db
+    encoding: utf8
+    collation: utf8_general_ci
+mysql_users:
+  - name: supinfo
+    host: "%"
+    password: supinfo-3lpic
+    priv: "main_db.*:ALL"
+mysql_packages:
+  - mariadb-server

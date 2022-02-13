@@ -1,0 +1,7 @@
+---
+- import_playbook: all/main.yml
+- import_playbook: app-server/main.yml
+- import_playbook: db-server/main.yml
+- import_playbook: masters/main.yml
+- import_playbook: db-master/main.yml
+- import_playbook: app-master/main.yml

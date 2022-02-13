@@ -1,0 +1,6 @@
+- hosts: app-servers
+  tasks:
+    - name: Copying the content into webpage
+      copy:
+        content: "welcome from {{ ansible_default_ipv4.address }}"
+        dest: /var/www/html/index.html

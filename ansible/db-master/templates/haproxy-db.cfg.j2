@@ -1,0 +1,22 @@
+# /etc/haproxy/haproxy.cfg
+global
+    log 127.0.0.1 local0 notice
+    user haproxy
+    group haproxy
+
+defaults
+    log global
+    retries 2
+    timeout connect 3000
+    timeout server 1m
+    timeout client 1m
+    option allbackups
+
+listen mysql-cluster
+    bind 127.0.0.1:3307
+    mode tcp
+    balance roundrobin
+    option mysql-check
+    default-server fastinter 1000
+    server mysql-1 172.16.25.21:3306 check
+    server mysql-2 172.16.25.22:3306 check

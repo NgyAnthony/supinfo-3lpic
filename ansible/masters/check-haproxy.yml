@@ -1,0 +1,14 @@
+---
+- hosts: masters
+  tasks:
+    - name: "Check if HAProxy is installed"
+      package_facts:
+        manager: "auto"
+    - name: "HAProxy result"
+      debug:
+        msg: "HAProxy found"
+      when: "'haproxy' in ansible_facts.packages"
+    - name: "HAProxy result"
+      debug:
+        msg: "HAProxy NOT found"
+      when: "'haproxy' not in ansible_facts.packages"

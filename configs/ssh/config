@@ -1,0 +1,23 @@
+Host lab-app-master-01
+  User root
+  Hostname 172.16.25.10
+
+Host lab-app-01
+  User root
+  Hostname 172.16.25.11
+
+Host lab-app-02
+  User root
+  Hostname 172.16.25.12
+
+Host lab-db-master-01
+  User root
+  Hostname 172.16.25.20
+
+Host lab-db-01
+  User root
+  Hostname 172.16.25.21
+
+Host lab-db-02
+  User root
+  Hostname 172.16.25.22

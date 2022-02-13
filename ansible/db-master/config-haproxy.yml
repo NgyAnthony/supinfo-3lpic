@@ -1,0 +1,14 @@
+---
+- hosts: app-masters
+  tasks:
+    - name: Configure the DB HAProxy server
+      template:
+        src: "haproxy-db.cfg.j2"
+        dest: "/etc/haproxy/haproxy.cfg"
+      notify: Restart Load Balancer HAProxy
+
+  handlers:
+    - name: Restart Load Balancer HAProxy
+      service:
+        name: "haproxy"
+        state: restarted

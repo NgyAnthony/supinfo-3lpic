@@ -1,0 +1,17 @@
+[app-masters]
+lab-app-master-01
+
+[db-masters]
+lab-db-master-01
+
+[masters]
+lab-db-master-01
+lab-app-master-01
+
+[app-servers]
+lab-app-01
+lab-app-02
+
+[db-servers]
+lab-db-01
+lab-db-02
