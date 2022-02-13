@@ -1,0 +1,11 @@
+---
+- hosts: all
+  tasks:
+    - name: Install NFS Common
+      package:
+        name: nfs-common
+        state: present
+    - name: Install NFS Tools
+      package:
+        name: nfs4-acl-tools
+        state: present

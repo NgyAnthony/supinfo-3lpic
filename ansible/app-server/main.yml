@@ -1,3 +1,4 @@
 ---
 - import_playbook: check-apache.yml
 - import_playbook: add-page.yml
+- import_playbook: connect-to-nfs.yml

@@ -1,4 +1,5 @@
 ---
+# RSync is used for pushing the certs
 - hosts: all
   tasks:
     - name: "Installing Rsync"
