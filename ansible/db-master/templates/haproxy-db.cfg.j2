@@ -13,10 +13,11 @@ defaults
     option allbackups
 
 listen mysql-cluster
-    bind *:3307
+    bind *:3306
     mode tcp
     balance roundrobin
     option mysql-check
     default-server fastinter 1000
     server mysql-1 172.16.25.21:3306 check
     server mysql-2 172.16.25.22:3306 check
+    server mysql-3 172.16.25.23:3306 check

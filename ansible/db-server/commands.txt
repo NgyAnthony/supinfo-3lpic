@@ -1,0 +1,13 @@
+apt install galera-3
+
+nano /etc/mysql/conf.d/galera.cnf
+
+ln -s /etc/apparmor.d/usr.sbin.mysqld /etc/apparmor.d/disable/
+apparmor_parser -R /etc/apparmor.d/usr.sbin.mysqld
+
+
+wget https://dev.mysql.com/get/Downloads/MySQL-Cluster-8.0/mysql-cluster-community-data-node_8.0.28-1debian11_amd64.deb
+
+[mysql_cluster]
+# Options for NDB Cluster processes:
+ndb-connectstring=172.16.25.21 #IP of the MySQL Cluster Manager

@@ -21,3 +21,7 @@ Host lab-db-01
 Host lab-db-02
   User root
   Hostname 172.16.25.22
+
+Host lab-db-03
+  User root
+  Hostname 172.16.25.23

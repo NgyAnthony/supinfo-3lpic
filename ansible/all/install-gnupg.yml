@@ -1,0 +1,7 @@
+---
+- hosts: all
+  tasks:
+    - name: Install GNUPG
+      package:
+        name: gnupg
+        state: present

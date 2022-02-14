@@ -2,3 +2,4 @@
 - import_playbook: update-apt-get.yml
 - import_playbook: install-rsync.yml
 - import_playbook: install-nfs-client.yml
+- import_playbook: install-gnupg.yml
