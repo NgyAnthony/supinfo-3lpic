@@ -7,6 +7,6 @@ mysql_users:
   - name: supinfo
     host: "%"
     password: supinfo-3lpic
-    priv: "main_db.*:ALL"
+    priv: "*.*:ALL"
 mysql_packages:
   - default-mysql-server

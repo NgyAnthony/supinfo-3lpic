@@ -1,0 +1,26 @@
+#https://www.howtoforge.com/tutorial/how-to-setup-mysql-master-master-replication/
+
+/etc/mysql/my.cnf
+server-id=1
+log-bin="mysql-bin"
+binlog-do-db=replicated_db
+replicate-do-db=replicated_db
+relay-log="mysql-relay-log"
+auto-increment-offset = 1
+
+server-id=2
+log-bin="mysql-bin"
+binlog-do-db=replicated_db
+replicate-do-db=replicated_db
+relay-log="mysql-relay-log"
+auto-increment-offset = 2
+
+mysql -u root -p
+CREATE USER 'replicator'@'%' IDENTIFIED BY 'supinfo-3lpic';
+GRANT REPLICATION SLAVE ON *.* TO 'replicator'@'%';
+
+CHANGE MASTER TO MASTER_HOST = '172.16.25.21',MASTER_USER = 'replicator', MASTER_PASSWORD = 'supinfo-3lpic', MASTER_LOG_FILE = 'mysql-bin.000008', MASTER_LOG_POS = 701;
+
+CHANGE MASTER TO MASTER_HOST = '172.16.25.22',MASTER_USER = 'replicator', MASTER_PASSWORD = 'supinfo-3lpic', MASTER_LOG_FILE = 'mysql-bin.000008', MASTER_LOG_POS = 342;
+
+GRANT ALL ON *.* TO 'supinfo'@'%';
