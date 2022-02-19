@@ -1,0 +1,6 @@
+a2dissite 000-default.conf
+a2ensite filegator.conf
+systemctl restart apache2
+
+// install php stuff
+apt install -y wget unzip php apache2 libapache2-mod-php php-zip php-mbstring php-dom php-xml

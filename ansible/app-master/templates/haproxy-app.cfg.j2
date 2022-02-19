@@ -36,8 +36,8 @@ global
     stats socket /var/lib/haproxy/stats
 
     # utilize system-wide crypto-policies
-    ssl-default-bind-ciphers PROFILE=SYSTEM
-    ssl-default-server-ciphers PROFILE=SYSTEM
+    # ssl-default-bind-ciphers PROFILE=SYSTEM
+    # ssl-default-server-ciphers PROFILE=SYSTEM
 
 #---------------------------------------------------------------------
 # common defaults that all the 'listen' and 'backend' sections will
@@ -65,7 +65,10 @@ defaults
 # main frontend which proxys to the backends
 #---------------------------------------------------------------------
 frontend main
-    bind *:8080
+    bind *:80
+    bind *:443 ssl crt /etc/haproxy/certs/ssl-certs.pem
+    redirect scheme https if !{ ssl_fc }
+    mode http
     default_backend             app
 
 #---------------------------------------------------------------------

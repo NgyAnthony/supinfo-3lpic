@@ -8,11 +8,11 @@
 # Add MySQL to servers
 - import_playbook: db-server/main.yml
 
-# HAProxy install, TLS termination, NFS servers
+# HAProxy install, NFS servers
 - import_playbook: masters/main.yml
 
-# Configure HAProxy for MySQL
-- import_playbook: db-master/main.yml
+# Configure HAProxy for MySQL - DO NOT RUN, it will remove MySQL replication
+#- import_playbook: db-master/main.yml
 
 # Configure HAProxy for Apache
 - import_playbook: app-master/main.yml
