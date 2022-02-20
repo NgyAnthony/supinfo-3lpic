@@ -1,6 +1,7 @@
 echo "RUNNING SCRIPT"
 
-CURRENT_DIR=$(pwd)
+#CURRENT_DIR=$(pwd)
+CURRENT_DIR="/data/nfs/www/filegator/repository/pylint"
 TEST_DIR="${CURRENT_DIR}/test-suite"
 ARCHIVE_DIR="${CURRENT_DIR}/archived"
 ANSWERS_DIR="${CURRENT_DIR}/answers"
