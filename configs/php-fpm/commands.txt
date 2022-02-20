@@ -1,0 +1,10 @@
+
+# auth integration https://docs.filegator.io/configuration/auth.html
+
+-----
+
+apt install php-fpm
+a2enmod proxy_fcgi setenvif
+a2enconf php7.4-fpm
+
+apt-get install php-mysql
